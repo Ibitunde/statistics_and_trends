@@ -20,7 +20,7 @@ def plot_relational_plot(df):
     ax.set_title('Price vs Mileage')
     plt.savefig('relational_plot.png')
     plt.show()
-
+    return
 
 def plot_categorical_plot(df):
     """
@@ -36,6 +36,7 @@ def plot_categorical_plot(df):
     ax.set_title('Distribution of Car Prices')
     plt.savefig('statistical_plot.png')
     plt.show()
+    return
 
 
 def plot_statistical_plot(df):
@@ -55,6 +56,7 @@ def plot_statistical_plot(df):
     ax.set_title('Distribution of Price by Fuel Type')
     plt.savefig('categorical_plot.png')
     plt.show()
+    return
 
 
 def statistical_analysis(df, col: str):
