@@ -47,7 +47,7 @@ def plot_statistical_plot(df):
     fig, ax = plt.subplots(dpi=144)
     # plots the boxplot with seaborn
     sns.boxplot(x=df['Fuel_Type'], y=df['Price'], hue=df['Fuel_Type'], 
-    palette='Set2', legend=False)
+                palette='Set2', legend=False)
     # formatting the x and y label
     ax.set_xlabel('Fuel_Type')
     ax.set_ylabel('Price')
