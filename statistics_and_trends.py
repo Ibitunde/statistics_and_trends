@@ -75,13 +75,13 @@ def preprocessing(df):
     describing data, and checking correlation.
     """
     # basic summary statistics
-    df.head()
     df.describe()
+    numeric_df = df.select_dtypes(include=[np.number])
+    numeric_df.corr()
+    df.head()
     print('\n Basic Summary of the data\n', df.head())
     print('\n Data Description:\n', df.describe())
     # Select only numeric columns before calculating correlation
-    numeric_df = df.select_dtypes(include=[np.number])
-    numeric_df.corr()
     # Compute correlation only on numeric data
     print('\nCorrelation:\n', numeric_df.corr())
     return df
