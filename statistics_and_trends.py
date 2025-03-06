@@ -46,7 +46,8 @@ def plot_statistical_plot(df):
     # selects the resolution of the plot
     fig, ax = plt.subplots(dpi=144)
     # plots the boxplot with seaborn
-    sns.boxplot(x=df['Fuel_Type'], y=df['Price'], hue=df['Fuel_Type'], palette='Set2', legend=False)
+    sns.boxplot(x=df['Fuel_Type'], y=df['Price'], hue=df['Fuel_Type'], 
+                palette='Set2', legend=False)
     # formatting the x and y label
     ax.set_xlabel('Fuel_Type')
     ax.set_ylabel('Price')
@@ -82,7 +83,7 @@ def preprocessing(df):
     numeric_df = df.select_dtypes(include=[np.number])
     numeric_df.corr()
     # Compute correlation only on numeric data
-    print('\nCorrelation:\n',numeric_df.corr())  
+    print('\nCorrelation:\n', numeric_df.corr())
     return df
 
 
