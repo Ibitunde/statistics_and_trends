@@ -22,6 +22,7 @@ def plot_relational_plot(df):
     plt.show()
     return
 
+
 def plot_categorical_plot(df):
     """
     Plot the categorical distribution of car prices.
