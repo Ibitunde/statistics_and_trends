@@ -46,7 +46,7 @@ def plot_statistical_plot(df):
     # selects the resolution of the plot
     fig, ax = plt.subplots(dpi=144)
     # plots the boxplot with seaborn
-    sns.boxplot(x=df['Fuel_Type'], y=df['Price'], palette='Set2')
+    sns.boxplot(x=df['Fuel_Type'], y=df['Price'], hue=df['Fuel_Type'], palette='Set2', legend=False)
     # formatting the x and y label
     ax.set_xlabel('Fuel_Type')
     ax.set_ylabel('Price')
@@ -76,18 +76,19 @@ def preprocessing(df):
     # basic summary statistics
     df.head()
     df.describe()
-    print(df.head())
-    print(df.describe())
+    print('\n Basic Summary of the data\n', df.head())
+    print('\n Data Description:\n', df.describe())
     # Select only numeric columns before calculating correlation
     numeric_df = df.select_dtypes(include=[np.number])
     numeric_df.corr()
-    print(numeric_df.corr())  # Compute correlation only on numeric data
+    # Compute correlation only on numeric data
+    print('\nCorrelation:\n',numeric_df.corr())  
     return df
 
 
 def writing(moments, col):
     """
-    Print statistical analysis results.
+    Print statistical moments analysis.
     """
     print(f'For the attribute {col}:')
     print(f'Mean = {moments[0]:.2f}, '
